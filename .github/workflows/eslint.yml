@@ -1,8 +1,7 @@
-name: GitHub Actions Demo
+name: GitHub Actions eslin
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: eslin
-          run: make lint
+      - run: make lint
