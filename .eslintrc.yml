@@ -1,0 +1,21 @@
+plugins:
+  - jest
+
+env:
+  node: true
+
+extends:
+  - 'airbnb-base'
+  - 'plugin:jest/recommended'
+
+parserOptions:
+  ecmaVerdion: latest
+
+rules:
+  no-console: 0
+  import/extensitons:
+    - error
+    - ignorePackeges
+    - js: always
+
+    no-underscore-dangle: [2, {"allow": ["_filename","_dirname"] }] 
