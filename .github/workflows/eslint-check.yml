@@ -1,8 +1,14 @@
 name: GitHub Actions eslint
 on: [push]
-steps:
-- name: Install dependencies
-  run: npm ci
 
-- name: lint
-  run: npm make lint
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: npm ci
+
+      - name: lint
+        run: npm make lint
