@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: lint
-        run: npm run lint
+        run: npm run make lint
