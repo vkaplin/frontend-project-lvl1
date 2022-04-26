@@ -22,6 +22,9 @@ function startGame(gameType) {
         case games.calc:
             console.log('What is the result of the expression?');
             break;
+        case games.gcd:
+            console.log('Find the greatest common divisor of given numbers.');
+            break;
         default:
             console.log('type not found');
     }
@@ -38,6 +41,9 @@ function startGame(gameType) {
                 break;
             case games.even:
                 console.log(`Question: ${numberOne}`);
+                break;
+            case games.gcd:
+                console.log(`Question: ${numberOne} ${numberTwo}`);
                 break;
             default:
                 console.log('type not found');

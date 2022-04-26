@@ -1,6 +1,13 @@
 import readlineSync from 'readline-sync';
 import { games } from './games-type.js';
 
+function getGCD(a, b) {
+    if (b !== 0) {
+        return getGCD(b, a % b);
+    }
+    return a;
+}
+
 function getUserName() {
     const userName = readlineSync.question('May I have your name?  ');
     return userName;
@@ -16,7 +23,7 @@ function getRandomNumber() {
 }
 
 function checkAnswer(answer, userAnswer) {
-    if (answer + "" ===  userAnswer + "") {
+    if (answer.toString() === userAnswer.toString()) {
         return true;
     } else {
         return false;
@@ -46,6 +53,8 @@ function geCorrectAnswer(gameType, numberOne, numberTwo, symbol) {
             default:
                 result = null;
         }
+    } else if (gameType === games.gcd) {
+        result = getGCD(numberOne, numberTwo);
     }
 
     return result;
