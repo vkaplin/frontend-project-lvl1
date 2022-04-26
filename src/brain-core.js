@@ -16,7 +16,7 @@ function getRandomNumber() {
 }
 
 function checkAnswer(answer, userAnswer) {
-    if (toString(answer) === userAnswer) {
+    if (answer + "" ===  userAnswer + "") {
         return true;
     } else {
         return false;
