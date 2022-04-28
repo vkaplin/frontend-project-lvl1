@@ -12,5 +12,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
+      
+      - name: install
+        run: npm install
+        
       - name: eslin
         run: make lint
