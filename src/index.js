@@ -1,7 +1,4 @@
-import { getUserName,
-        checkAnswer,
-        getUserAnswer,
-         } from './brain-core.js';
+import { getUserName, checkAnswer, getUserAnswer } from './brain-core.js';
 import { games } from './games-type.js';
 
 import getCorrectAnswerCalc from './games/calc.js';

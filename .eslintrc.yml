@@ -12,8 +12,9 @@ parserOptions:
   ecmaVerdion: latest
 
 rules:
-  indent : 'off'
+  indent: 'off'
   no-console: 0
+  import/prefer-default-export: 'off'
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
