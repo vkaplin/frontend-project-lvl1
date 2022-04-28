@@ -3,6 +3,7 @@ import { getUserName,
         checkAnswer,
         geCorrectAnswer,
         getUserAnswer,
+        getProgression,
         getRandomSimbol } from './brain-core.js';
 
 import { games } from './games-type.js';
@@ -25,15 +26,31 @@ function startGame(gameType) {
         case games.gcd:
             console.log('Find the greatest common divisor of given numbers.');
             break;
+        case games.progression:
+            console.log('What number is missing in the progression?');
+            break;
         default:
             console.log('type not found');
     }
 
     do {
-        const numberOne = getRandomNumber();
-        const numberTwo = getRandomNumber();
+        let maxRandomNumber = 100;
+        if (gameType === games.progression) {
+            maxRandomNumber = 10;
+        }
+        const numberOne = getRandomNumber(maxRandomNumber);
+        const numberTwo = getRandomNumber(maxRandomNumber);
         const simbol = getRandomSimbol();
-        const correctAnswer = geCorrectAnswer(gameType, numberOne, numberTwo, simbol);
+        const progression = getProgression(numberOne, numberTwo);
+        const randomNumber = getRandomNumber(maxRandomNumber);
+        let correctAnswer;
+
+        if (gameType === games.progression) {
+            correctAnswer = progression[randomNumber];
+            progression[randomNumber] = '..';
+        } else {
+            correctAnswer = geCorrectAnswer(gameType, numberOne, numberTwo, simbol);
+        }
 
         switch (gameType) {
             case games.calc:
@@ -44,6 +61,9 @@ function startGame(gameType) {
                 break;
             case games.gcd:
                 console.log(`Question: ${numberOne} ${numberTwo}`);
+                break;
+            case games.progression:
+                console.log(`Question: ${progression.join(' ')}`);
                 break;
             default:
                 console.log('type not found');

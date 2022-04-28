@@ -18,16 +18,16 @@ function getUserAnswer() {
     return answer;
 }
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * 100);
+function getRandomNumber(maxNumber) {
+    return Math.floor(Math.random() * maxNumber);
 }
 
 function checkAnswer(answer, userAnswer) {
-    if (answer.toString() === userAnswer.toString()) {
-        return true;
-    } else {
-        return false;
+    let result = false;
+    if (answer && userAnswer && answer.toString() === userAnswer.toString()) {
+        result = true;
     }
+    return result;
 }
 
 function geCorrectAnswer(gameType, numberOne, numberTwo, symbol) {
@@ -65,6 +65,18 @@ function getRandomSimbol() {
     const number = Math.floor(Math.random() * 3);
     return simbolArray[number];
 }
+function getProgression(a, b) {
+    const array = [];
+    let curretnNumber = a && a > 0 ? a : 1;
+    const number = b && b > 0 ? b : 1;
+    for (let i = 0; i < 10; i += 1) {
+        if (i !== 0) {
+            curretnNumber += number;
+        }
+        array.push(curretnNumber);
+    }
+    return array;
+}
 
 export {
     getUserName,
@@ -73,4 +85,5 @@ export {
     getUserAnswer,
     geCorrectAnswer,
     getRandomSimbol,
+    getProgression,
 };
