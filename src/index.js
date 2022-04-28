@@ -8,50 +8,50 @@ import getCorrectAnswerPrime from './games/prime.js';
 import getCorrectAnswerProgression from './games/progression.js';
 
 function startGame(gameType) {
-    let curretnAttempt = 0;
-    let answerIsCorrect = false;
-    const userName = getUserName();
+  let curretnAttempt = 0;
+  let answerIsCorrect = false;
+  const userName = getUserName();
 
-    console.log('Welcome to the Brain Games!');
-    console.log(`Hello, ${userName}`);
+  console.log('Welcome to the Brain Games!');
+  console.log(`Hello, ${userName}`);
 
-    do {
-        let correctAnswer;
+  do {
+    let correctAnswer;
 
-        switch (gameType) {
-            case games.calc:
-                correctAnswer = getCorrectAnswerCalc();
-                break;
-            case games.even:
-                correctAnswer = getCorrectAnswerEven();
-                break;
-            case games.gcd:
-                correctAnswer = getCorrectAnswerGCD();
-                break;
-            case games.progression:
-                correctAnswer = getCorrectAnswerProgression();
-                break;
-            case games.prime:
-                correctAnswer = getCorrectAnswerPrime();
-                break;
-            default:
-                console.log('type not found');
-        }
+    switch (gameType) {
+      case games.calc:
+        correctAnswer = getCorrectAnswerCalc();
+        break;
+      case games.even:
+        correctAnswer = getCorrectAnswerEven();
+        break;
+      case games.gcd:
+        correctAnswer = getCorrectAnswerGCD();
+        break;
+      case games.progression:
+        correctAnswer = getCorrectAnswerProgression();
+        break;
+      case games.prime:
+        correctAnswer = getCorrectAnswerPrime();
+        break;
+      default:
+        console.log('type not found');
+    }
 
-        const userAnswer = getUserAnswer();
-        answerIsCorrect = checkAnswer(correctAnswer, userAnswer);
+    const userAnswer = getUserAnswer();
+    answerIsCorrect = checkAnswer(correctAnswer, userAnswer);
 
-        if (curretnAttempt === 2 && answerIsCorrect) {
-            console.log(`Congratulations, ${userName}!`);
-        } else if (answerIsCorrect) {
-            console.log('Correct!');
-        } else {
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-            console.log(`Let's try again, ${userName}!`);
-        }
+    if (curretnAttempt === 2 && answerIsCorrect) {
+      console.log(`Congratulations, ${userName}!`);
+    } else if (answerIsCorrect) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+    }
 
-        curretnAttempt += 1;
-    } while (curretnAttempt < 3 && answerIsCorrect);
+    curretnAttempt += 1;
+  } while (curretnAttempt < 3 && answerIsCorrect);
 }
 
 export default startGame;
