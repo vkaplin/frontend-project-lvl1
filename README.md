@@ -3,12 +3,15 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
-https://asciinema.org/a/lkEEvCJodOh3psAc1ot7H5Fsk
+данный проект содержит в себе 5 игр.
 
-https://asciinema.org/a/cUWoLRYqim9q5JAPVFqFNK2vq
 
-https://asciinema.org/a/obdBRXikUJLAEKRw1rRNC6seC
+Игра: "Проверка на чётность" - https://asciinema.org/a/lkEEvCJodOh3psAc1ot7H5Fsk
 
-https://asciinema.org/a/KWFiLoWbpJ5aockKRCA5dNm83
+Игра: "Калькулятор" - https://asciinema.org/a/cUWoLRYqim9q5JAPVFqFNK2vq
 
-https://asciinema.org/a/XY5HTHrHSv3rGhrQTNfE1ihpt
+Игра "НОД" - https://asciinema.org/a/obdBRXikUJLAEKRw1rRNC6seC
+
+Игра "Арифметическая прогрессия" - https://asciinema.org/a/KWFiLoWbpJ5aockKRCA5dNm83
+
+Игра "Простое ли число?" - https://asciinema.org/a/XY5HTHrHSv3rGhrQTNfE1ihpt

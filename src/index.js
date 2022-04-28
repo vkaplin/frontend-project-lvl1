@@ -1,12 +1,14 @@
 import { getUserName,
-        getRandomNumber,
         checkAnswer,
-        geCorrectAnswer,
         getUserAnswer,
-        getProgression,
-        getRandomSimbol } from './brain-core.js';
-
+         } from './brain-core.js';
 import { games } from './games-type.js';
+
+import getCorrectAnswerCalc from './games/calc.js';
+import getCorrectAnswerEven from './games/even.js';
+import getCorrectAnswerGCD from './games/gcd.js';
+import getCorrectAnswerPrime from './games/prime.js';
+import getCorrectAnswerProgression from './games/progression.js';
 
 function startGame(gameType) {
     let curretnAttempt = 0;
@@ -16,60 +18,24 @@ function startGame(gameType) {
     console.log('Welcome to the Brain Games!');
     console.log(`Hello, ${userName}`);
 
-    switch (gameType) {
-        case games.even:
-            console.log('Answer "yes" if the number is even, otherwise answer "no".');
-            break;
-        case games.calc:
-            console.log('What is the result of the expression?');
-            break;
-        case games.gcd:
-            console.log('Find the greatest common divisor of given numbers.');
-            break;
-        case games.progression:
-            console.log('What number is missing in the progression?');
-            break;
-        case games.prime:
-            console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-            break;
-        default:
-            console.log('type not found');
-    }
-
     do {
-        let maxRandomNumber = 100;
-        if (gameType === games.progression) {
-            maxRandomNumber = 10;
-        }
-        const numberOne = getRandomNumber(maxRandomNumber);
-        const numberTwo = getRandomNumber(maxRandomNumber);
-        const simbol = getRandomSimbol();
-        const progression = getProgression(numberOne, numberTwo);
-        const randomNumber = getRandomNumber(maxRandomNumber);
         let correctAnswer;
-
-        if (gameType === games.progression) {
-            correctAnswer = progression[randomNumber];
-            progression[randomNumber] = '..';
-        } else {
-            correctAnswer = geCorrectAnswer(gameType, numberOne, numberTwo, simbol);
-        }
 
         switch (gameType) {
             case games.calc:
-                console.log(`Question: ${numberOne} ${simbol} ${numberTwo}`);
+                correctAnswer = getCorrectAnswerCalc();
                 break;
             case games.even:
-                console.log(`Question: ${numberOne}`);
+                correctAnswer = getCorrectAnswerEven();
                 break;
             case games.gcd:
-                console.log(`Question: ${numberOne} ${numberTwo}`);
+                correctAnswer = getCorrectAnswerGCD();
                 break;
             case games.progression:
-                console.log(`Question: ${progression.join(' ')}`);
+                correctAnswer = getCorrectAnswerProgression();
                 break;
             case games.prime:
-                console.log(`Question: ${numberOne}`);
+                correctAnswer = getCorrectAnswerPrime();
                 break;
             default:
                 console.log('type not found');

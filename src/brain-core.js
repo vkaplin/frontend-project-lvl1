@@ -1,28 +1,4 @@
 import readlineSync from 'readline-sync';
-import { games } from './games-type.js';
-
-function getGCD(a, b) {
-    if (b !== 0) {
-        return getGCD(b, a % b);
-    }
-    return a;
-}
-function checkPime(number) {
-    let result = 'yes';
-    if (number > 2) {
-        const max = Math.sqrt(number);
-        let i = 2;
-        while (i < max) {
-            if (number % i === 0) {
-                result = 'no';
-                break;
-            }
-            i += 1;
-        }
-    }
-
-    return result;
-}
 
 function getUserName() {
     const userName = readlineSync.question('May I have your name?  ');
@@ -46,62 +22,9 @@ function checkAnswer(answer, userAnswer) {
     return result;
 }
 
-function geCorrectAnswer(gameType, numberOne, numberTwo, symbol) {
-    let result;
-
-    if (gameType === games.even) {
-        if (numberOne % 2 === 0) {
-            result = 'yes';
-        } else {
-            result = 'no';
-        }
-    } else if (gameType === games.calc) {
-        switch (symbol) {
-            case '+':
-                result = numberOne + numberTwo;
-                break;
-            case '-':
-                result = numberOne - numberTwo;
-                break;
-            case '*':
-                result = numberOne * numberTwo;
-                break;
-            default:
-                result = null;
-        }
-    } else if (gameType === games.gcd) {
-        result = getGCD(numberOne, numberTwo);
-    } else if (gameType === games.prime) {
-        result = checkPime(numberOne);
-    }
-
-    return result;
-}
-
-function getRandomSimbol() {
-    const simbolArray = ['*', '-', '+'];
-    const number = Math.floor(Math.random() * 3);
-    return simbolArray[number];
-}
-function getProgression(a, b) {
-    const array = [];
-    let curretnNumber = a && a > 0 ? a : 1;
-    const number = b && b > 0 ? b : 1;
-    for (let i = 0; i < 10; i += 1) {
-        if (i !== 0) {
-            curretnNumber += number;
-        }
-        array.push(curretnNumber);
-    }
-    return array;
-}
-
 export {
     getUserName,
     getRandomNumber,
     checkAnswer,
     getUserAnswer,
-    geCorrectAnswer,
-    getRandomSimbol,
-    getProgression,
 };
