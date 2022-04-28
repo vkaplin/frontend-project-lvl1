@@ -29,6 +29,9 @@ function startGame(gameType) {
         case games.progression:
             console.log('What number is missing in the progression?');
             break;
+        case games.prime:
+            console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+            break;
         default:
             console.log('type not found');
     }
@@ -64,6 +67,9 @@ function startGame(gameType) {
                 break;
             case games.progression:
                 console.log(`Question: ${progression.join(' ')}`);
+                break;
+            case games.prime:
+                console.log(`Question: ${numberOne}`);
                 break;
             default:
                 console.log('type not found');

@@ -7,6 +7,22 @@ function getGCD(a, b) {
     }
     return a;
 }
+function checkPime(number) {
+    let result = 'yes';
+    if (number > 2) {
+        const max = Math.sqrt(number);
+        let i = 2;
+        while (i < max) {
+            if (number % i === 0) {
+                result = 'no';
+                break;
+            }
+            i += 1;
+        }
+    }
+
+    return result;
+}
 
 function getUserName() {
     const userName = readlineSync.question('May I have your name?  ');
@@ -55,6 +71,8 @@ function geCorrectAnswer(gameType, numberOne, numberTwo, symbol) {
         }
     } else if (gameType === games.gcd) {
         result = getGCD(numberOne, numberTwo);
+    } else if (gameType === games.prime) {
+        result = checkPime(numberOne);
     }
 
     return result;

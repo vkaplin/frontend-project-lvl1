@@ -3,4 +3,5 @@ export const games = {
     even: 'even',
     gcd: 'gcd',
     progression: 'progression',
+    prime: 'prime',
 };
