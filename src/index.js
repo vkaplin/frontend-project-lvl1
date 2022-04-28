@@ -1,5 +1,14 @@
 import { getUserName, checkAnswer, getUserAnswer } from './brain-core.js';
-import { games } from './games-type.js';
+//import { games } from './games-type.js';
+
+const games = {
+    calc: 'calc',
+    even: 'even',
+    gcd: 'gcd',
+    progression: 'progression',
+    prime: 'prime',
+  };
+  
 
 import getCorrectAnswerCalc from './games/calc.js';
 import getCorrectAnswerEven from './games/even.js';
