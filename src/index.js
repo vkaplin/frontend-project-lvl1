@@ -6,6 +6,7 @@ import getCorrectAnswerGCD from './games/gcd.js';
 import getCorrectAnswerPrime from './games/prime.js';
 import getCorrectAnswerProgression from './games/progression.js';
 
+// import { games } from './games-core.js';
 const games = {
   calc: 'calc',
   even: 'even',
