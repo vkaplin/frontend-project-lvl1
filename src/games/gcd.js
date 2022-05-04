@@ -1,4 +1,5 @@
 import { getRandomNumber } from '../brain-core.js';
+import startGame from '../index.js';
 
 function getGCD(a, b) {
   if (b !== 0) {
@@ -6,16 +7,16 @@ function getGCD(a, b) {
   }
   return a;
 }
+const description = 'Find the greatest common divisor of given numbers.';
 
-function getCorrectAnswerGCD() {
+const generateRound = () => {
   const maxRandomNumber = 100;
-  const numberOne = getRandomNumber(maxRandomNumber);
-  const numberTwo = getRandomNumber(maxRandomNumber);
+  const minRandomNumber = 1;
+  const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const answer = getGCD(numberOne, numberTwo);
+  const question = `Question: ${numberOne} ${numberTwo}`;
+  return [question, answer];
+};
 
-  console.log('Find the greatest common divisor of given numbers.');
-  console.log(`Question: ${numberOne} ${numberTwo}`);
-
-  return getGCD(numberOne, numberTwo);
-}
-
-export default getCorrectAnswerGCD;
+export default () => startGame(description, generateRound);
