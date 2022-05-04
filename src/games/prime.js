@@ -1,6 +1,7 @@
 import { getRandomNumber } from '../brain-core.js';
+import startGame from '../index.js';
 
-function checkPime(number) {
+const checkPime = (number) => {
   let result = 'yes';
   if (number > 2) {
     const max = Math.sqrt(number);
@@ -13,18 +14,17 @@ function checkPime(number) {
       i += 1;
     }
   }
-
   return result;
-}
+};
 
-function getCorrectAnswerPrime() {
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const generateRound = () => {
   const maxRandomNumber = 100;
-  const numberOne = getRandomNumber(maxRandomNumber);
+  const minRandomNumber = 1;
+  const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const answer = checkPime(numberOne);
+  const question = `Question: ${numberOne}`;
+  return [question, answer];
+};
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  console.log(`Question: ${numberOne}`);
-
-  return checkPime(numberOne);
-}
-
-export default getCorrectAnswerPrime;
+export default () => startGame(description, generateRound);
