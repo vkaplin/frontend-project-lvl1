@@ -1,6 +1,7 @@
 import { getRandomNumber } from '../brain-core.js';
+import startGame from '../index.js';
 
-function getProgression(a, b) {
+const getProgression = (a, b) => {
   const array = [];
   let curretnNumber = a && a > 0 ? a : 1;
   const number = b && b > 0 ? b : 1;
@@ -12,22 +13,24 @@ function getProgression(a, b) {
     array.push(curretnNumber);
   }
   return array;
-}
+};
 
-function getCorrectAnswerProgression() {
+const description = 'What number is missing in the progression?';
+
+const generateRound = () => {
   const maxRandomNumber = 10;
-  const numberOne = getRandomNumber(maxRandomNumber);
-  const numberTwo = getRandomNumber(maxRandomNumber);
+  const minRandomNumber = 1;
+  const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
   const progression = getProgression(numberOne, numberTwo);
-  const randomNumber = getRandomNumber(maxRandomNumber);
+  const randomNumber = getRandomNumber(minRandomNumber, maxRandomNumber);
   const answer = progression[randomNumber];
 
   progression[randomNumber] = '..';
 
-  console.log('What number is missing in the progression?');
-  console.log(`Question: ${progression.join(' ')}`);
+  const question = `Question: ${progression.join(' ')}`;
 
-  return answer;
-}
+  return [question, answer];
+};
 
-export default getCorrectAnswerProgression;
+export default () => startGame(description, generateRound);
