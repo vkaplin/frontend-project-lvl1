@@ -1,34 +1,36 @@
 import { getRandomNumber } from '../brain-core.js';
+import startGame from '../index.js';
 
-function getRandomSimbol() {
+const description = 'What is the result of the expression?';
+const getRandomSimbol = () => {
   const simbolArray = ['*', '-', '+'];
   const number = Math.floor(Math.random() * 3);
   return simbolArray[number];
-}
+};
 
-function getCorrectAnswerCalc() {
-  const maxRandomNumber = 100;
-  const numberOne = getRandomNumber(maxRandomNumber);
-  const numberTwo = getRandomNumber(maxRandomNumber);
-  const symbol = getRandomSimbol();
-  let answer;
-  console.log('What is the result of the expression?');
-  console.log(`Question: ${numberOne} ${symbol} ${numberTwo}`);
-
+const getCorrectAnswerCalc = (numberOne, numberTwo, symbol) => {
   switch (symbol) {
     case '+':
-      answer = numberOne + numberTwo;
-      break;
+      return numberOne + numberTwo;
     case '-':
-      answer = numberOne - numberTwo;
-      break;
+      return numberOne - numberTwo;
     case '*':
-      answer = numberOne * numberTwo;
-      break;
+      return numberOne * numberTwo;
     default:
-      answer = null;
+      console.log('unknown symbol');
+      return null;
   }
-  return answer;
-}
+};
 
-export default getCorrectAnswerCalc;
+const generateRound = () => {
+  const maxRandomNumber = 100;
+  const minRandomNumber = 1;
+  const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const symbol = getRandomSimbol();
+  const answer = getCorrectAnswerCalc(numberOne, numberTwo, symbol);
+  const question = `Question: ${numberOne} ${symbol} ${numberTwo}`;
+  return [question, answer];
+};
+
+export default () => startGame(description, generateRound);
