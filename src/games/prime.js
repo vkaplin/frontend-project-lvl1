@@ -3,17 +3,17 @@ import startGame from '../index.js';
 
 const checkPime = (number) => {
   let result = 'yes';
-  if (number > 2) {
-    const max = Math.sqrt(number);
-    let i = 2;
-    while (i < max) {
-      if (number % i === 0) {
-        result = 'no';
-        break;
-      }
-      i += 1;
+  const max = Math.sqrt(number);
+  let i = 2;
+  while (i < max) {
+    if (number % i < 1) {
+      result = 'no';
+      break;
     }
+    i += 1;
   }
+
+  
   return result;
 };
 
