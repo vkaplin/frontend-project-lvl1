@@ -51,5 +51,4 @@ If you want to start game -> use `brain-progression` command.
 
 If you want to start game -> use `brain-prime` command.
 
-[![asciicast](https://asciinema.org/a/XV5F85lVqEfSyxbovxAtkwmbe.svg)](https://asciinema.org/a/XV5F85lVqEfSyxbovxAtkwmbe)
-
+[![asciicast](https://asciinema.org/a/XV5F85lVqEfSyxbovxAtkwmbe.svg)](https://asciinema.org/a/XV5F85lVqEfSyxbovxAtkwmbe) 
