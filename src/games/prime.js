@@ -12,8 +12,6 @@ const checkPime = (number) => {
     }
     i += 1;
   }
-
-  
   return result;
 };
 
