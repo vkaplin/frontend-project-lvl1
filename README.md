@@ -19,7 +19,7 @@
 
 If you want to start game -> use `brain-even` command.
 
-[![asciicast](https://asciinema.org/a/lkEEvCJodOh3psAc1ot7H5Fsk.svg)](https://asciinema.org/a/lkEEvCJodOh3psAc1ot7H5Fsk)
+[![asciicast](https://asciinema.org/a/hkfacQF58D65eMhNTWchqGfPs.svg)](https://asciinema.org/a/hkfacQF58D65eMhNTWchqGfPs)
 
 ## Brain calculate game
 
@@ -27,7 +27,7 @@ If you want to start game -> use `brain-even` command.
 
 If you want to start game -> use `brain-calc` command.
 
-[![asciicast](https://asciinema.org/a/cUWoLRYqim9q5JAPVFqFNK2vq.svg)](https://asciinema.org/a/cUWoLRYqim9q5JAPVFqFNK2vq)
+[![asciicast](https://asciinema.org/a/Lfwy7aP7cmWh1getFhFGG0LlM.svg)](https://asciinema.org/a/Lfwy7aP7cmWh1getFhFGG0LlM)
 
 ## Brain gcd game
 
@@ -35,7 +35,7 @@ If you want to start game -> use `brain-calc` command.
 
 If you want to start game -> use `brain-gcd` command.
 
-[![asciicast](https://asciinema.org/a/obdBRXikUJLAEKRw1rRNC6seC.svg)](https://asciinema.org/a/obdBRXikUJLAEKRw1rRNC6seC)
+[![asciicast](https://asciinema.org/a/DXxophV9EfwfyFkPB0ZRjFc9u.svg)](https://asciinema.org/a/DXxophV9EfwfyFkPB0ZRjFc9u)
 
 ## Brain progression game
 
@@ -43,7 +43,7 @@ If you want to start game -> use `brain-gcd` command.
 
 If you want to start game -> use `brain-progression` command.
 
-[![asciicast](https://asciinema.org/a/KWFiLoWbpJ5aockKRCA5dNm83.svg)](https://asciinema.org/a/KWFiLoWbpJ5aockKRCA5dNm83)
+[![asciicast](https://asciinema.org/a/51wEub7UDcRjpD0QFbRWpbMuB.svg)](https://asciinema.org/a/51wEub7UDcRjpD0QFbRWpbMuB)
 
 ## Brain prime game
 
@@ -51,16 +51,5 @@ If you want to start game -> use `brain-progression` command.
 
 If you want to start game -> use `brain-prime` command.
 
-[![asciicast](https://asciinema.org/a/XY5HTHrHSv3rGhrQTNfE1ihpt.svg)](https://asciinema.org/a/XY5HTHrHSv3rGhrQTNfE1ihpt)
+[![asciicast](https://asciinema.org/a/XV5F85lVqEfSyxbovxAtkwmbe.svg)](https://asciinema.org/a/XV5F85lVqEfSyxbovxAtkwmbe)
 
-
-
-Игра: "Проверка на чётность" - https://asciinema.org/a/lkEEvCJodOh3psAc1ot7H5Fsk
-
-Игра: "Калькулятор" - https://asciinema.org/a/cUWoLRYqim9q5JAPVFqFNK2vq
-
-Игра "НОД" - https://asciinema.org/a/obdBRXikUJLAEKRw1rRNC6seC
-
-Игра "Арифметическая прогрессия" - https://asciinema.org/a/KWFiLoWbpJ5aockKRCA5dNm83
-
-Игра "Простое ли число?" - https://asciinema.org/a/XY5HTHrHSv3rGhrQTNfE1ihpt
