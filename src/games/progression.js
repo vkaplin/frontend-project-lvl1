@@ -23,7 +23,7 @@ const generateRound = () => {
   const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
   const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
   const progression = getProgression(numberOne, numberTwo);
-  const randomNumber = getRandomNumber(minRandomNumber, maxRandomNumber);
+  const randomNumber = getRandomNumber(minRandomNumber, maxRandomNumber - 1);
   const answer = progression[randomNumber];
 
   progression[randomNumber] = '..';
