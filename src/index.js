@@ -1,20 +1,26 @@
 import readlineSync from 'readline-sync';
-import { getUserName } from './brain-core.js';
+
+const getUserName = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name?  ');
+  console.log(`Hello, ${userName}`);
+  return userName;
+};
+const roundsCount = 3;
 
 function startGame(description, generateRound) {
-  const roundsCount = 3;
   const userName = getUserName();
 
-  console.log(`${description}`);
+  console.log(description);
 
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, answer] = generateRound();
 
-    console.log(`${question}`);
+    console.log(question);
 
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer.toString() === userAnswer.toString()) {
+    if (answer === userAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
