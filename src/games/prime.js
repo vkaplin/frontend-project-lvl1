@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../brain-core.js';
+import getRandomNumber from '../brain-core.js';
 import startGame from '../index.js';
 
 const checkPime = (number) => {

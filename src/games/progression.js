@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../brain-core.js';
+import getRandomNumber from '../brain-core.js';
 import startGame from '../index.js';
 
 const getProgression = (a, b) => {
@@ -30,7 +30,7 @@ const generateRound = () => {
 
   const question = `Question: ${progression.join(' ')}`;
 
-  return [question, answer];
+  return [question, String(answer)];
 };
 
 export default () => startGame(description, generateRound);

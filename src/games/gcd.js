@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../brain-core.js';
+import getRandomNumber from '../brain-core.js';
 import startGame from '../index.js';
 
 function getGCD(a, b) {
@@ -16,7 +16,7 @@ const generateRound = () => {
   const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
   const answer = getGCD(numberOne, numberTwo);
   const question = `Question: ${numberOne} ${numberTwo}`;
-  return [question, answer];
+  return [question, String(answer)];
 };
 
 export default () => startGame(description, generateRound);
