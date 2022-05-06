@@ -1,25 +1,24 @@
-import { getRandomNumber } from '../brain-core.js';
+import getRandomNumber from '../brain-core.js';
 import startGame from '../index.js';
 
 const description = 'What is the result of the expression?';
-const getRandomSimbol = () => {
-  const simbolArray = ['*', '-', '+'];
-  const number = Math.floor(Math.random() * 3);
-  return simbolArray[number];
-};
 
 const getCorrectAnswerCalc = (numberOne, numberTwo, symbol) => {
+  let answer = '';
   switch (symbol) {
     case '+':
-      return numberOne + numberTwo;
+      answer = numberOne + numberTwo;
+      break;
     case '-':
-      return numberOne - numberTwo;
+      answer = numberOne - numberTwo;
+      break;
     case '*':
-      return numberOne * numberTwo;
+      answer = numberOne * numberTwo;
+      break;
     default:
-      console.log('unknown symbol');
-      return null;
+      throw new Error(`Operator - ${symbol}, doesn't supported`);
   }
+  return String(answer);
 };
 
 const generateRound = () => {
@@ -27,9 +26,10 @@ const generateRound = () => {
   const minRandomNumber = 1;
   const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
   const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
-  const symbol = getRandomSimbol();
-  const answer = getCorrectAnswerCalc(numberOne, numberTwo, symbol);
-  const question = `Question: ${numberOne} ${symbol} ${numberTwo}`;
+  const operators = ['*', '-', '+'];
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
+  const answer = getCorrectAnswerCalc(numberOne, numberTwo, operator);
+  const question = `Question: ${numberOne} ${operator} ${numberTwo}`;
   return [question, answer];
 };
 
