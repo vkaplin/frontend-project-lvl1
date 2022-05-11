@@ -1,11 +1,11 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const getProgression = (a, b) => {
+const getProgression = (a, b, maxProgressionLength) => {
   const array = [];
   let curretnNumber = a;
 
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < maxProgressionLength; i += 1) {
     if (i !== 0) {
       curretnNumber += b;
     }
@@ -22,7 +22,7 @@ const generateRound = () => {
 
   const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
   const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
-  const progression = getProgression(numberOne, numberTwo);
+  const progression = getProgression(numberOne, numberTwo, maxRandomNumber);
   const randomNumber = getRandomNumber(minRandomNumber, maxRandomNumber - 1);
   const answer = String(progression[randomNumber]);
 
