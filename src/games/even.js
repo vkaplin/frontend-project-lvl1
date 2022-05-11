@@ -1,21 +1,22 @@
-import getRandomNumber from '../brain-core.js';
+import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getCorrectAnswer = (number) => {
+const isEven = (number) => {
   if (number % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const generateRound = () => {
   const minRandomNumber = 1;
   const maxRandomNumber = 100;
   const number = getRandomNumber(minRandomNumber, maxRandomNumber);
-  const answer = getCorrectAnswer(number);
+  const answer = isEven(number) ? 'yes' : 'no';
   const question = `Question: ${number}`;
+
   return [question, answer];
 };
 

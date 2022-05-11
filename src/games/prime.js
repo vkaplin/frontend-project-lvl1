@@ -1,13 +1,13 @@
-import getRandomNumber from '../brain-core.js';
+import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const checkPime = (number) => {
-  let result = 'yes';
+const isPrime = (number) => {
+  let result = true;
   const max = Math.sqrt(number);
   let i = 2;
   while (i < max) {
     if (number % i < 1) {
-      result = 'no';
+      result = false;
       break;
     }
     i += 1;
@@ -19,9 +19,11 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 const generateRound = () => {
   const maxRandomNumber = 100;
   const minRandomNumber = 1;
+
   const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
-  const answer = checkPime(numberOne);
+  const answer = isPrime(numberOne) ? 'yes' : 'no';
   const question = `Question: ${numberOne}`;
+
   return [question, answer];
 };
 
