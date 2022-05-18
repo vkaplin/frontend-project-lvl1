@@ -3,7 +3,7 @@ import startGame from '../index.js';
 
 const description = 'What is the result of the expression?';
 
-const getCorrectAnswerCalc = (numberOne, numberTwo, operator) => {
+const calculate = (numberOne, numberTwo, operator) => {
   switch (operator) {
     case '+':
       return numberOne + numberTwo;
@@ -26,7 +26,7 @@ const generateRound = () => {
   const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
   const operator = operators[getRandomNumber(0, operators.length - 1)];
   const question = `Question: ${numberOne} ${operator} ${numberTwo}`;
-  const answer = getCorrectAnswerCalc(numberOne, numberTwo, operator).toString();
+  const answer = calculate(numberOne, numberTwo, operator).toString();
 
   return [question, answer];
 };

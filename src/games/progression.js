@@ -1,32 +1,32 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const getProgression = (a, b, maxProgressionLength) => {
-  const array = [];
-  let curretnNumber = a;
+const description = 'What number is missing in the progression?';
 
-  for (let i = 0; i < maxProgressionLength; i += 1) {
+const getProgression = (startNumber, step, maxLength) => {
+  const array = [];
+  let curretnNumber = startNumber;
+
+  for (let i = 0; i < maxLength; i += 1) {
     if (i !== 0) {
-      curretnNumber += b;
+      curretnNumber += step;
     }
     array.push(curretnNumber);
   }
   return array;
 };
 
-const description = 'What number is missing in the progression?';
-
 const generateRound = () => {
-  const maxRandomNumber = 10;
-  const minRandomNumber = 1;
+  const maxLength = 10;
+  const minLength = 1;
 
-  const numberOne = getRandomNumber(minRandomNumber, maxRandomNumber);
-  const numberTwo = getRandomNumber(minRandomNumber, maxRandomNumber);
-  const progression = getProgression(numberOne, numberTwo, maxRandomNumber);
-  const randomNumber = getRandomNumber(minRandomNumber, maxRandomNumber - 1);
-  const answer = String(progression[randomNumber]);
+  const startNumber = getRandomNumber(minLength, maxLength);
+  const step = getRandomNumber(minLength, maxLength);
+  const progression = getProgression(startNumber, step, maxLength);
+  const randomIndex = getRandomNumber(minLength, maxLength - 1);
+  const answer = progression[randomIndex].toString();
 
-  progression[randomNumber] = '..';
+  progression[randomIndex] = '..';
 
   const question = `Question: ${progression.join(' ')}`;
 

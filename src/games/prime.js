@@ -1,6 +1,8 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (number) => {
   let result = true;
   const max = Math.sqrt(number);
@@ -15,7 +17,6 @@ const isPrime = (number) => {
   return result;
 };
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const generateRound = () => {
   const maxRandomNumber = 100;
   const minRandomNumber = 1;

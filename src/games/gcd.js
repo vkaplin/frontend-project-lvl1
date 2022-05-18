@@ -1,14 +1,14 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
 const getGCD = (a, b) => {
   if (b !== 0) {
     return getGCD(b, a % b);
   }
   return a;
 };
-
-const description = 'Find the greatest common divisor of given numbers.';
 
 const generateRound = () => {
   const maxRandomNumber = 100;
