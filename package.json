@@ -4,7 +4,6 @@
   "description": "project of 6 simple games",
   "main": "index.js",
   "bin": {
-    "brain-games": "bin/brain-games.js",
     "brain-calc": "bin/brain-calc.js",    
     "brain-even": "bin/brain-even.js",
     "brain-gcd": "bin/brain-gcd.js",
@@ -31,6 +30,8 @@
   "devDependencies": {
     "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "jest": "^28.0.0"
   }
 }
